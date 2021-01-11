@@ -22,12 +22,14 @@ const Home = ({navigation}) => {
       style={{width: '100%', height: '100%'}}>
       <View style={styles.MainContainer}>
         <Header />
-        <MenuTab />
-        <ScrollView horizontal showsHorizontalScrollIndicator={false}>
-          <Food />
-          <Food />
-          <Food />
-          <Food />
+        <ScrollView showsVerticalalScrollIndicator={false}>
+          <MenuTab />
+          <ScrollView horizontal showsHorizontalScrollIndicator={false}>
+            <Food navigation={navigation} />
+            <Food navigation={navigation} />
+            <Food navigation={navigation} />
+            <Food navigation={navigation} />
+          </ScrollView>
         </ScrollView>
       </View>
       <NavBar navigation={navigation} />
@@ -36,6 +38,7 @@ const Home = ({navigation}) => {
 };
 
 const styles = StyleSheet.create({
+  MainContainer: {},
   MainContainer: {},
 });
 

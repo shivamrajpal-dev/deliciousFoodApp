@@ -18,6 +18,7 @@ import Home from './screens/home';
 import Wallet from './screens/wallet';
 import Chat from './screens/chat';
 import Account from './screens/account';
+import FoodDescription from './screens/foodDescription';
 const Stack = createStackNavigator();
 
 function App() {
@@ -29,6 +30,7 @@ function App() {
         <Stack.Screen name="wallet" component={Wallet} />
         <Stack.Screen name="chat" component={Chat} />
         <Stack.Screen name="account" component={Account} />
+        <Stack.Screen name="food" component={FoodDescription} />
       </Stack.Navigator>
     </NavigationContainer>
   );

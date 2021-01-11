@@ -13,10 +13,15 @@ import NavBar from '../components/navbar/NavBar';
 
 const Wallet = ({navigation}) => {
   return (
-    <View style={{flex: 1, alignItems: 'center', justifyContent: 'center'}}>
-      <Text>Details Screen</Text>
-      <NavBar navigation={navigation} />
-    </View>
+    <ImageBackground
+      source={require('../assets/background.png')}
+      style={{width: '100%', height: '100%'}}>
+      <View style={{flex: 1, alignItems: 'center', justifyContent: 'center'}}>
+        <Text style={{fontSize: 30}}>wallet Screen</Text>
+
+        <NavBar navigation={navigation} />
+      </View>
+    </ImageBackground>
   );
 };
 

@@ -7,31 +7,38 @@ import {
   ImageBackground,
   Pressable,
   ScrollView,
+  TouchableHighlight,
   Image,
 } from 'react-native';
 
 import Icon from 'react-native-vector-icons/Feather';
-const Food = () => {
+const Food = ({navigation}) => {
   return (
-    <View horizontal="true">
-      <View style={styles.foodContainer}>
-        <Image
-          style={styles.foodImg}
-          source={require('../../assets/food/food1.png')}
-        />
-        <View style={styles.FoodDetails}>
-          <Text style={styles.FoodName}>Crab Ramen</Text>
-          <Text style={styles.FoodDescription}>Spicy With Garlic</Text>
-        </View>
-        <View style={styles.foodFooter}>
-          <Text style={styles.foodPrice}>$24.00</Text>
-          <View style={styles.foodLike}>
-            <Text>
-              <Icon name="heart" size={30} />
-            </Text>
+    <View>
+      <TouchableHighlight
+        activeOpacity={0.6}
+        underlayColor="rgba(0, 0, 0, 0.4)"
+        style={styles.foodContainer}
+        onPress={() => navigation.navigate('food')}>
+        <View style={{alignItems: 'center'}}>
+          <Image
+            style={styles.foodImg}
+            source={require('../../assets/food/food1.png')}
+          />
+          <View style={styles.FoodDetails}>
+            <Text style={styles.FoodName}>Crab Ramen</Text>
+            <Text style={styles.FoodDescription}>Spicy With Garlic</Text>
+          </View>
+          <View style={styles.foodFooter}>
+            <View>
+              <Text style={styles.foodPrice}>$24.00</Text>
+            </View>
+            <View style={styles.foodLike}>
+              <Icon name="heart" size={20} />
+            </View>
           </View>
         </View>
-      </View>
+      </TouchableHighlight>
     </View>
   );
 };
@@ -52,9 +59,10 @@ const styles = StyleSheet.create({
   },
   foodFooter: {
     flexDirection: 'row',
-    justifyContent: 'space-around',
-    width: '100%',
-    marginTop: 5,
+    justifyContent: 'space-between',
+    width: '80%',
+    marginTop: 10,
+    marginLeft: 50,
     alignItems: 'center',
   },
   FoodDetails: {
@@ -67,8 +75,8 @@ const styles = StyleSheet.create({
   },
   foodLike: {
     backgroundColor: 'rgba(0, 0, 0, 0.2)',
-    width: 40,
-    height: 40,
+    width: 30,
+    height: 30,
     alignItems: 'center',
     justifyContent: 'center',
     borderRadius: 70,

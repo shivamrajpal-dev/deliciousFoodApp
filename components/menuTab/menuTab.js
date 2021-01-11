@@ -35,9 +35,17 @@ const MenuTab = () => {
             <Icon3 name="ios-beer-outline" size={40} />
           </Text>
         </Pressable>
-        <Pressable style={styles.menuIcon}>
+        <Pressable
+          style={{
+            height: 54,
+            width: 54,
+            borderRadius: 14,
+            backgroundColor: 'rgba(0, 0, 0, 1)',
+            justifyContent: 'center',
+            alignItems: 'center',
+          }}>
           <Text>
-            <Icon2 name="restaurant-menu" size={40} />
+            <Icon2 name="restaurant-menu" size={40} color={'white'} />
           </Text>
         </Pressable>
       </View>
